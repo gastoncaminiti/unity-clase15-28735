@@ -55,6 +55,11 @@ public class PlayerCollision : MonoBehaviour
         }
 
         if (other.gameObject.CompareTag("Gem")){
+            Debug.Log(other.GetComponent<GemType>().typeGem);
+            Debug.Log((int)other.GetComponent<GemType>().typeGem);
+            GameManager.instance.gemQuantity[(int)other.GetComponent<GemType>().typeGem]++;
+            
+            /*
             InventoryManager playerInventory = pmPlayer.GetPlayerInventory();
             GameObject gem = other.gameObject;
             gem.SetActive(false);
@@ -67,6 +72,7 @@ public class PlayerCollision : MonoBehaviour
             playerInventory.SeeInventoryTwo();
             Debug.Log("--------- INVETARIO 3 -----------");
             playerInventory.SeeInventoryThree();
+            */
         }
     }   
 }
